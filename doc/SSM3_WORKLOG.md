@@ -46,6 +46,36 @@ lateral-G zero reset (test item `0x0202`), then enumerate other test functions.
 - Determine exact CAN IDs / DID / subfunction / timing for the reset.
 - Enumerate other test functions from `TestModeInfo` records.
 
+### Latest finding (this session)
+- Decompiled all five functions referencing `PassThruWriteMsgs` string:
+  `FUN_007E9960`, `FUN_005530E0`, `FUN_007B31F0`, `FUN_007D2190`,
+  `FUN_00551870`. **All five are only J2534 loader functions** — they call
+  `LoadLibraryA("NSMIF32.dll")` and `GetProcAddress` and store FARPROC pointers
+  in globals (e.g. `_DAT_00bec2f8`) or object slots (`param_1 + 0x10`).
+  None constructs a request. `findrefs 0xbec2f8` shows only two WRITE refs,
+  no readable call refs — the actual J2534 calls are indirect through stored
+  pointers, so static xref tracing cannot locate them.
+- `TestModeInfo` records are 72-byte fixed-size records. Across the 10 DLLs,
+  constant fields include offsets 5/6 = `02 02`, offset 8 = `0D 00`, offset
+  19 = `10`, offset 37 = `20`; varying bytes at offsets 0, 14-16, 24-25 hold
+  the per-ECU identifiers/addresses. No wire command bytes are present.
+- Qwen subagent could not execute the local CLI tools reliably in its
+  environment; findings are being fed to it as text instead.
+
+### Conclusion so far
+The DB tables provide the *test-mode structure*, not the wire commands.
+Recovering the exact request bytes requires either a live J2534/CAN capture
+of the reset, or dynamic instrumentation of `PcDiag.exe` (e.g. hooking
+`PassThruWriteMsgs` at runtime). Neither has been done yet.
+- Decompile the 5 functions that reference `PassThruWriteMsgs` string to understand how request buffers are constructed.
+
+### Analysis of TestModeInfo Structure
+Based on the record from DBFU2001.dll:
+- Record: `0E 00 00 02 02 00 0D 00 ... 08 41 ...`
+- Structure appears to be: [length=0E][padding][test_id=0202][flags][data_len][UDS_service=08][subfunction=41]...
+- This indicates test 0x0202 is a UDS service 0x08 with subfunction 0x41 (likely Tester Present with specific subfunction)
+- The UDS command likely corresponds to steering angle neutral + lateral G zero reset
+
 ### Open questions
 - Where the DB `TestModeInfo` bytes are turned into a J2534 `PASSTHRU_MSG`.
 - Seed/key algorithm for write-style tests (4-byte seed, `SecurityXor` in `immb.exe`).
