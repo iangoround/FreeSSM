@@ -56,14 +56,48 @@ and loading `op20pt32.dll` directly from the OpenECU driver directory in a
 - No live ECU communication test was possible (cable not connected / ignition
   state unknown). Please plug in the OpenPort 2.0 and run the interface test.
 
-## Build and test
+## Toolchain downloads and sources
 
-Toolchain used:
+A **32-bit** toolchain is required: `op20pt32.dll` is 32-bit and cannot be loaded
+by a 64-bit FreeSSM. The following were used on this machine; all downloads are
+public and need no Qt account.
+
+| Tool | Version used | Where to get it |
+|---|---|---|
+| Git | bundled with GitHub Desktop 3.7.0 | https://desktop.github.com/ — `git.exe` at `C:\Users\ianph\AppData\Local\GitHubDesktop\app-3.7.0\resources\app\git\cmd\git.exe`. Standalone alternative: https://git-scm.com/download/win |
+| winget (App Installer) | built into Windows 11 | Used for the installs below; no separate download needed |
+| aqtinstall (`aqt`) | 3.3.0 | `winget install --id miurahr.aqtinstall --exact` or GitHub releases: https://github.com/miurahr/aqtinstall/releases |
+| Qt 5.15.2 (32-bit MinGW) | `win32_mingw81` | Fetched by `aqt` from the Qt mirrors, e.g. https://download.qt.io/archive/qt/5.15/5.15.2/ and https://download.qt.io/mirrors.cgi |
+| MinGW 8.1.0 (32-bit) | `qt.tools.win32_mingw810` | Qt tool package, also fetched by `aqt`; installed to `C:\Qt\Tools\mingw810_32` |
+| `windeployqt`, `lrelease` | Qt 5.15.2 | Shipped with Qt at `C:\Qt\5.15.2\mingw81_32\bin` |
+
+MSYS2 (https://www.msys2.org/ , installer releases at
+https://github.com/msys2/msys2-installer/releases) was installed during
+exploration but is **not needed**: its `mingw32` repository no longer provides
+Qt for i686. The working 32-bit Qt and compiler come from `aqtinstall` above.
+
+Install commands used:
 
 ```
+winget install --id miurahr.aqtinstall --exact --accept-source-agreements --accept-package-agreements
 aqt install-qt windows desktop 5.15.2 win32_mingw81 -O C:\Qt
 aqt install-tool windows desktop tools_mingw qt.tools.win32_mingw810 -O C:\Qt
 ```
+
+The `aqt.exe` installed by winget is at:
+
+```
+C:\Users\ianph\AppData\Local\Microsoft\WinGet\Packages\miurahr.aqtinstall_Microsoft.Winget.Source_8wekyb3d8bbwe\aqt.exe
+```
+
+Make sure these are on `PATH` before building:
+
+```
+C:\Qt\5.15.2\mingw81_32\bin
+C:\Qt\Tools\mingw810_32\bin
+```
+
+## Build and test
 
 Build (from an empty build directory):
 
@@ -87,3 +121,25 @@ Then:
 If the interface does not appear, a release build hides the diagnostic messages;
 building with `CONFIG+=debug` enables `__J2534_API_DEBUG__` / `__FSSM_DEBUG__`
 and prints J2534 errors to the console.
+
+## Sync to the test machine
+
+Source and the complete 32-bit build tree are tracked in:
+
+```
+https://github.com/iangoround/FreeSSM.git   (branch master)
+```
+
+On the test machine:
+
+```
+git clone https://github.com/iangoround/FreeSSM.git
+cd FreeSSM\build
+FreeSSM.exe
+```
+
+The committed `build\` folder already contains `FreeSSM.exe`, the deployed Qt
+DLLs, `platforms\qwindows.dll`, and a populated `definitions\` directory, so no
+Qt installation is required just to run it. Rebuild there after pulling source
+changes with `qmake ..\FreeSSM.pro -spec win32-g++ CONFIG+=release` followed by
+`mingw32-make -j4` (using the toolchain paths above).
