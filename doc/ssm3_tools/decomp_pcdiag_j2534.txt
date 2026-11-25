@@ -1,0 +1,1820 @@
+String 'PassThruConnect' @ 00b817c8
+String 'OnPassThruInitCan' @ 00b81844
+String 'PassThruConnect' @ 00b8360c
+String 'PassThruConnect' @ 00b856fc
+String 'OnPassThruInitCan' @ 00b85780
+String 'OnPassThruInitFast' @ 00b87fc0
+String 'OnPassThruInitFast' @ 00b87ffc
+String 'OnPassThruInitFast' @ 00b88054
+String 'PassThruOpen' @ 00b8a770
+String 'PassThruWriteMsgs' @ 00b8a840
+String 'PassThruReadMsgs' @ 00b8a854
+String 'PassThruConnect' @ 00b8a87c
+String 'KernelDisconnect' @ 00b8aa64
+String 'KernelConnect' @ 00b8aa78
+String 'OnPassThruInitCan' @ 00b8ac30
+String 'OnPassThruInitCan' @ 00b8ac78
+String 'OnPassThruInitCan' @ 00b8acc8
+String 'OnPassThruInitCan' @ 00b8ad0c
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8afe0
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b038
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b0a0
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b110
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b160
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b1c0
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b218
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b27c
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b2d8
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b32c
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b3a0
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b424
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b484
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b4e8
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b55c
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b5dc
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b63c
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b6ac
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b710
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b784
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b7f0
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b854
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b8d4
+String 'OnPassThruWriteReadMsgs_ISO15765' @ 00b8b964
+String 'PassThruConnect' @ 00b925b0
+String 'OnPassThruInitCan' @ 00b92624
+String 'PassThruConnect' @ 00b92818
+String 'OnPassThruInitCan' @ 00b9288c
+String 'PassThruConnect' @ 00ba2834
+String 'OnPassThruInitFast' @ 00ba28f8
+String 'OnPassThruInit5baud' @ 00ba2938
+String 'OnPassThruInitCan' @ 00ba2978
+String 'PassThruReadMsgs' @ 00ba3090
+String 'PassThruReadMsgs' @ 00ba30dc
+String 'OnPassThruInitFast' @ 00bdb5c8
+String 'OnPassThruInitFast' @ 00bdba08
+String 'OnPassThruInitFast' @ 00bdc2d8
+String 'OnPassThruInitFast' @ 00bdc688
+String 'OnPassThruInitFast' @ 00bdcbd8
+String 'OnPassThruInitFast' @ 00bdcf4c
+String 'OnPassThruInitFast' @ 00bdd2bc
+String 'OnPassThruInitFast' @ 00bdd640
+String 'OnPassThruInitFast' @ 00bdd9e4
+Selected functions: 25
+
+===== FUN_0047ae50 @ 0047ae50 =====
+
+void __thiscall FUN_0047ae50(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  CString *this;
+  int *piVar4;
+  CString aCStack_24 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0087f9c8;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_24 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar2 == 0) {
+    if (param_3 == 0) {
+      piVar1 = param_1 + 0x274e;
+      piVar3 = piVar1;
+      for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar3 = 0;
+        piVar3 = piVar3 + 1;
+      }
+      iVar2 = 0;
+      piVar3 = (int *)(param_1[0x1b17] + 8 + param_1[0x1b1d] * 0x198);
+      if (*(int *)(param_1[0x1b17] + 8 + param_1[0x1b1d] * 0x198) != 0) {
+        piVar4 = piVar1;
+        do {
+          iVar2 = iVar2 + 1;
+          *piVar4 = *piVar3;
+          piVar4[1] = piVar3[1];
+          piVar4 = piVar4 + 2;
+          piVar3 = (int *)(param_1[0x1b17] + 8 + (iVar2 + param_1[0x1b1d] * 0x33) * 8);
+        } while (*piVar3 != 0);
+        if (0 < iVar2) {
+          param_1[0x278f] = (int)piVar1;
+          param_1[0x278e] = iVar2;
+          FUN_007d3a00();
+          ExceptionList = puStack_8;
+          return;
+        }
+      }
+      (**(code **)(*param_1 + 0x114))(0);
+      ExceptionList = local_10;
+      return;
+    }
+    FUN_0047ad60();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_0047b650 @ 0047b650 =====
+
+void __thiscall FUN_0047b650(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int iVar1;
+  CString *this;
+  CString aCStack_20 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0087fa08;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_20 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar1 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar1 == 0) {
+    if (param_3 == 0) {
+      param_1[0x1b13] = 1;
+      FUN_0047b560();
+      FUN_0047b730();
+      param_1[0x1af8] = 6;
+      ExceptionList = puStack_8;
+      return;
+    }
+    FUN_0047ad60();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_004a3480 @ 004a3480 =====
+
+void __thiscall FUN_004a3480(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  CString *this;
+  int *piVar4;
+  CString aCStack_24 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_00880b08;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_24 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar2 == 0) {
+    if (param_3 == 0) {
+      piVar1 = param_1 + 0x2f50;
+      piVar3 = piVar1;
+      for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar3 = 0;
+        piVar3 = piVar3 + 1;
+      }
+      iVar2 = 0;
+      piVar3 = (int *)(param_1[0x2319] + 8 + param_1[0x231f] * 0x198);
+      if (*(int *)(param_1[0x2319] + 8 + param_1[0x231f] * 0x198) != 0) {
+        piVar4 = piVar1;
+        do {
+          iVar2 = iVar2 + 1;
+          *piVar4 = *piVar3;
+          piVar4[1] = piVar3[1];
+          piVar4 = piVar4 + 2;
+          piVar3 = (int *)(param_1[0x2319] + 8 + (iVar2 + param_1[0x231f] * 0x33) * 8);
+        } while (*piVar3 != 0);
+        if (0 < iVar2) {
+          param_1[0x2f91] = (int)piVar1;
+          param_1[0x2f90] = iVar2;
+          FUN_007d3a00();
+          ExceptionList = puStack_8;
+          return;
+        }
+      }
+      (**(code **)(*param_1 + 0x114))(0);
+      ExceptionList = local_10;
+      return;
+    }
+    FUN_004a2fe0();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_004b9c90 @ 004b9c90 =====
+
+void __thiscall FUN_004b9c90(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  CString *this;
+  int *piVar4;
+  CString aCStack_24 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_00881728;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_24 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar2 == 0) {
+    if (param_3 == 0) {
+      piVar1 = param_1 + 0x301a;
+      piVar3 = piVar1;
+      for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar3 = 0;
+        piVar3 = piVar3 + 1;
+      }
+      iVar2 = 0;
+      piVar3 = (int *)(param_1[0x23e3] + 8 + param_1[0x23e9] * 0x198);
+      if (*(int *)(param_1[0x23e3] + 8 + param_1[0x23e9] * 0x198) != 0) {
+        piVar4 = piVar1;
+        do {
+          iVar2 = iVar2 + 1;
+          *piVar4 = *piVar3;
+          piVar4[1] = piVar3[1];
+          piVar4 = piVar4 + 2;
+          piVar3 = (int *)(param_1[0x23e3] + 8 + (iVar2 + param_1[0x23e9] * 0x33) * 8);
+        } while (*piVar3 != 0);
+        if (0 < iVar2) {
+          param_1[0x305b] = (int)piVar1;
+          param_1[0x305a] = iVar2;
+          FUN_007d3a00();
+          ExceptionList = puStack_8;
+          return;
+        }
+      }
+      (**(code **)(*param_1 + 0x114))(0);
+      ExceptionList = local_10;
+      return;
+    }
+    FUN_004b9ba0();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_004ba5a0 @ 004ba5a0 =====
+
+void __thiscall FUN_004ba5a0(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int iVar1;
+  CString *this;
+  CString aCStack_20 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_00881788;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_20 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar1 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar1 == 0) {
+    if (param_3 == 0) {
+      param_1[0x23df] = 1;
+      FUN_004ba3c0();
+      FUN_004ba680();
+      param_1[0x305c] = 9;
+      ExceptionList = puStack_8;
+      return;
+    }
+    FUN_004b9ba0();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_00551870 @ 00551870 =====
+
+undefined4 __thiscall FUN_00551870(int param_1,undefined4 param_2,uchar *param_3)
+
+{
+  uchar *puVar1;
+  int iVar2;
+  HMODULE hModule;
+  FARPROC pFVar3;
+  AFX_MODULE_STATE *pAVar4;
+  
+  if (*(int *)(param_1 + 0x4c) != 0) {
+    FUN_00551a30();
+  }
+  puVar1 = _mbsstr(param_3,(uchar *)s_Software_PassThruSupport_04_04_00b8a88c);
+  if (puVar1 == (uchar *)0x0) {
+    iVar2 = FUN_005511c0(param_2,param_3);
+    if (iVar2 == 0) {
+      return 0;
+    }
+  }
+  else {
+    iVar2 = FUN_005515b0(param_3);
+    if (iVar2 == 0) {
+      return 0;
+    }
+    *(undefined4 *)(param_1 + 0x90) = 1;
+  }
+  hModule = LoadLibraryA(*(LPCSTR *)(param_1 + 0x84));
+  *(HMODULE *)(param_1 + 0x4c) = hModule;
+  if (hModule == (HMODULE)0x0) {
+    *(undefined4 *)(param_1 + 0x90) = 0;
+    return 0;
+  }
+  pFVar3 = GetProcAddress(hModule,s_PassThruConnect_00b8a87c);
+  *(FARPROC *)(param_1 + 4) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruDisconnect_00b8a868);
+  *(FARPROC *)(param_1 + 8) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruReadMsgs_00b8a854);
+  *(FARPROC *)(param_1 + 0xc) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruWriteMsgs_00b8a840);
+  *(FARPROC *)(param_1 + 0x10) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruStartPeriodicMsg_00b8a824);
+  *(FARPROC *)(param_1 + 0x14) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruStopPeriodicMsg_00b8a80c);
+  *(FARPROC *)(param_1 + 0x18) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruStartMsgFilter_00b8a7f4);
+  *(FARPROC *)(param_1 + 0x1c) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruStopMsgFilter_00b8a7dc);
+  *(FARPROC *)(param_1 + 0x20) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruSetProgrammingVoltage_00b8a7bc);
+  *(FARPROC *)(param_1 + 0x24) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruReadVersion_00b8a7a8);
+  *(FARPROC *)(param_1 + 0x28) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruGetLastError_00b8a790);
+  *(FARPROC *)(param_1 + 0x2c) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruIoctl_00b8a780);
+  *(FARPROC *)(param_1 + 0x30) = pFVar3;
+  if (*(int *)(param_1 + 0x90) != 0) {
+    pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruOpen_00b8a770);
+    *(FARPROC *)(param_1 + 0x38) = pFVar3;
+    pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruClose_00b8a760);
+    *(FARPROC *)(param_1 + 0x3c) = pFVar3;
+    pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruConnect_00b8a87c);
+    *(FARPROC *)(param_1 + 0x40) = pFVar3;
+    pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruSetProgrammingVoltage_00b8a7bc);
+    *(FARPROC *)(param_1 + 0x44) = pFVar3;
+    pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),s_PassThruReadVersion_00b8a7a8);
+    *(FARPROC *)(param_1 + 0x48) = pFVar3;
+  }
+  iVar2 = _mbscmp(*(uchar **)(param_1 + 0x94),(uchar *)s_DST_i_00b82430);
+  if (iVar2 == 0) {
+    pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x4c),(LPCSTR)0x67);
+    *(FARPROC *)(param_1 + 0x34) = pFVar3;
+  }
+  *(undefined4 *)(param_1 + 0x50) = 1;
+  pAVar4 = AfxGetModuleState();
+  *(undefined4 *)(*(int *)(pAVar4 + 4) + 0x10c) = *(undefined4 *)(param_1 + 0x90);
+  return 1;
+}
+
+
+
+===== FUN_007e9960 @ 007e9960 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __fastcall FUN_007e9960(int param_1)
+
+{
+  int iVar1;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  int local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008c0018;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  FUN_007e98f0();
+  iVar1 = FUN_007eaab0();
+  if (iVar1 == 0) {
+    ExceptionList = local_c;
+    return 0;
+  }
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x44b8));
+  CString::MakeUpper((CString *)&local_10);
+  iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+  if (iVar1 == -1) {
+    local_4 = iVar1;
+    CString::~CString((CString *)&local_10);
+    ExceptionList = local_c;
+    return 0;
+  }
+  DAT_00bec2e8 = LoadLibraryA(*(LPCSTR *)(param_1 + 0x44b8));
+  if (DAT_00bec2e8 == (HMODULE)0x0) {
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+    ExceptionList = local_c;
+    return 0;
+  }
+  _DAT_00bec2ec = GetProcAddress(DAT_00bec2e8,s_PassThruConnect_00b8a87c);
+  _DAT_00bec2f0 = GetProcAddress(DAT_00bec2e8,s_PassThruDisconnect_00b8a868);
+  _DAT_00bec2f4 = GetProcAddress(DAT_00bec2e8,s_PassThruReadMsgs_00b8a854);
+  _DAT_00bec2f8 = GetProcAddress(DAT_00bec2e8,s_PassThruWriteMsgs_00b8a840);
+  _DAT_00bec2fc = GetProcAddress(DAT_00bec2e8,s_PassThruStartPeriodicMsg_00b8a824);
+  _DAT_00bec300 = GetProcAddress(DAT_00bec2e8,s_PassThruStopPeriodicMsg_00b8a80c);
+  _DAT_00bec304 = GetProcAddress(DAT_00bec2e8,s_PassThruStartMsgFilter_00b8a7f4);
+  _DAT_00bec308 = GetProcAddress(DAT_00bec2e8,s_PassThruStopMsgFilter_00b8a7dc);
+  _DAT_00bec30c = GetProcAddress(DAT_00bec2e8,s_PassThruSetProgrammingVoltage_00b8a7bc);
+  _DAT_00bec310 = GetProcAddress(DAT_00bec2e8,s_PassThruReadVersion_00b8a7a8);
+  _DAT_00bec314 = GetProcAddress(DAT_00bec2e8,s_PassThruGetLastError_00b8a790);
+  _DAT_00bec318 = GetProcAddress(DAT_00bec2e8,s_PassThruIoctl_00b8a780);
+  local_4 = 0xffffffff;
+  CString::~CString((CString *)&local_10);
+  ExceptionList = local_c;
+  return 1;
+}
+
+
+
+===== FUN_005530e0 @ 005530e0 =====
+
+void __thiscall FUN_005530e0(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  CString *this;
+  HMODULE pHVar1;
+  int iVar2;
+  FARPROC pFVar3;
+  
+  if (*(int *)(param_1 + 0x34) != 0) {
+    FUN_00553200();
+  }
+  this = (CString *)(param_1 + 0x6c);
+  CString::operator=(this,s_NSMIF32_dll_00b8aaac);
+  pHVar1 = LoadLibraryA(*(LPCSTR *)this);
+  *(HMODULE *)(param_1 + 0x34) = pHVar1;
+  if (pHVar1 == (HMODULE)0x0) {
+    iVar2 = FUN_00552cd0(param_2,param_3);
+    if (iVar2 == 0) {
+      return;
+    }
+    pHVar1 = LoadLibraryA(*(LPCSTR *)this);
+    *(HMODULE *)(param_1 + 0x34) = pHVar1;
+    if (pHVar1 == (HMODULE)0x0) {
+      return;
+    }
+  }
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruConnect_00b8a87c);
+  *(FARPROC *)(param_1 + 4) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruDisconnect_00b8a868);
+  *(FARPROC *)(param_1 + 8) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruReadMsgs_00b8a854);
+  *(FARPROC *)(param_1 + 0xc) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruWriteMsgs_00b8a840);
+  *(FARPROC *)(param_1 + 0x10) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruStartPeriodicMsg_00b8a824);
+  *(FARPROC *)(param_1 + 0x14) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruStopPeriodicMsg_00b8a80c);
+  *(FARPROC *)(param_1 + 0x18) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruStartMsgFilter_00b8a7f4);
+  *(FARPROC *)(param_1 + 0x1c) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruStopMsgFilter_00b8a7dc);
+  *(FARPROC *)(param_1 + 0x20) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruSetProgrammingVoltage_00b8a7bc);
+  *(FARPROC *)(param_1 + 0x24) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruReadVersion_00b8a7a8);
+  *(FARPROC *)(param_1 + 0x28) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruGetLastError_00b8a790);
+  *(FARPROC *)(param_1 + 0x2c) = pFVar3;
+  pFVar3 = GetProcAddress(*(HMODULE *)(param_1 + 0x34),s_PassThruIoctl_00b8a780);
+  *(FARPROC *)(param_1 + 0x30) = pFVar3;
+  *(undefined4 *)(param_1 + 0x38) = 1;
+  return;
+}
+
+
+
+===== FUN_007b31f0 @ 007b31f0 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __fastcall FUN_007b31f0(int param_1)
+
+{
+  int iVar1;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  int local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008bafd8;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  FUN_007b3130();
+  iVar1 = FUN_007b3930();
+  if (iVar1 == 0) {
+    ExceptionList = local_c;
+    return 0;
+  }
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x204));
+  CString::MakeUpper((CString *)&local_10);
+  iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+  if (iVar1 == -1) {
+    local_4 = iVar1;
+    CString::~CString((CString *)&local_10);
+    ExceptionList = local_c;
+    return 0;
+  }
+  DAT_00bec26c = LoadLibraryA(*(LPCSTR *)(param_1 + 0x204));
+  if (DAT_00bec26c == (HMODULE)0x0) {
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+    ExceptionList = local_c;
+    return 0;
+  }
+  _DAT_00bec270 = GetProcAddress(DAT_00bec26c,s_PassThruConnect_00b8a87c);
+  _DAT_00bec274 = GetProcAddress(DAT_00bec26c,s_PassThruDisconnect_00b8a868);
+  _DAT_00bec278 = GetProcAddress(DAT_00bec26c,s_PassThruReadMsgs_00b8a854);
+  _DAT_00bec27c = GetProcAddress(DAT_00bec26c,s_PassThruWriteMsgs_00b8a840);
+  _DAT_00bec280 = GetProcAddress(DAT_00bec26c,s_PassThruStartPeriodicMsg_00b8a824);
+  _DAT_00bec284 = GetProcAddress(DAT_00bec26c,s_PassThruStopPeriodicMsg_00b8a80c);
+  _DAT_00bec288 = GetProcAddress(DAT_00bec26c,s_PassThruStartMsgFilter_00b8a7f4);
+  _DAT_00bec28c = GetProcAddress(DAT_00bec26c,s_PassThruStopMsgFilter_00b8a7dc);
+  _DAT_00bec290 = GetProcAddress(DAT_00bec26c,s_PassThruSetProgrammingVoltage_00b8a7bc);
+  _DAT_00bec294 = GetProcAddress(DAT_00bec26c,s_PassThruReadVersion_00b8a7a8);
+  _DAT_00bec298 = GetProcAddress(DAT_00bec26c,s_PassThruGetLastError_00b8a790);
+  DAT_00bec29c = GetProcAddress(DAT_00bec26c,s_PassThruIoctl_00b8a780);
+  local_4 = 0xffffffff;
+  CString::~CString((CString *)&local_10);
+  ExceptionList = local_c;
+  return 1;
+}
+
+
+
+===== FUN_007d2190 @ 007d2190 =====
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 __fastcall FUN_007d2190(int param_1)
+
+{
+  int iVar1;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  int local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008bdb38;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  FUN_007d2120();
+  iVar1 = FUN_007d2ba0();
+  if (iVar1 == 0) {
+    ExceptionList = local_c;
+    return 0;
+  }
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x4640));
+  CString::MakeUpper((CString *)&local_10);
+  iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+  if (iVar1 == -1) {
+    local_4 = iVar1;
+    CString::~CString((CString *)&local_10);
+    ExceptionList = local_c;
+    return 0;
+  }
+  DAT_00bec2b0 = LoadLibraryA(*(LPCSTR *)(param_1 + 0x4640));
+  if (DAT_00bec2b0 == (HMODULE)0x0) {
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+    ExceptionList = local_c;
+    return 0;
+  }
+  _DAT_00bec2b4 = GetProcAddress(DAT_00bec2b0,s_PassThruConnect_00b8a87c);
+  _DAT_00bec2b8 = GetProcAddress(DAT_00bec2b0,s_PassThruDisconnect_00b8a868);
+  _DAT_00bec2bc = GetProcAddress(DAT_00bec2b0,s_PassThruReadMsgs_00b8a854);
+  _DAT_00bec2c0 = GetProcAddress(DAT_00bec2b0,s_PassThruWriteMsgs_00b8a840);
+  _DAT_00bec2c4 = GetProcAddress(DAT_00bec2b0,s_PassThruStartPeriodicMsg_00b8a824);
+  _DAT_00bec2c8 = GetProcAddress(DAT_00bec2b0,s_PassThruStopPeriodicMsg_00b8a80c);
+  _DAT_00bec2cc = GetProcAddress(DAT_00bec2b0,s_PassThruStartMsgFilter_00b8a7f4);
+  _DAT_00bec2d0 = GetProcAddress(DAT_00bec2b0,s_PassThruStopMsgFilter_00b8a7dc);
+  _DAT_00bec2d4 = GetProcAddress(DAT_00bec2b0,s_PassThruSetProgrammingVoltage_00b8a7bc);
+  _DAT_00bec2d8 = GetProcAddress(DAT_00bec2b0,s_PassThruReadVersion_00b8a7a8);
+  _DAT_00bec2dc = GetProcAddress(DAT_00bec2b0,s_PassThruGetLastError_00b8a790);
+  DAT_00bec2e0 = GetProcAddress(DAT_00bec2b0,s_PassThruIoctl_00b8a780);
+  local_4 = 0xffffffff;
+  CString::~CString((CString *)&local_10);
+  ExceptionList = local_c;
+  return 1;
+}
+
+
+
+===== FUN_005ff910 @ 005ff910 =====
+
+undefined4 __fastcall FUN_005ff910(int param_1)
+
+{
+  int iVar1;
+  HMODULE hModule;
+  FARPROC pFVar2;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_00897428;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  iVar1 = FUN_005ffd00();
+  if (iVar1 != 0) {
+    CString::CString((CString *)&local_10);
+    local_4 = 0;
+    CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x445c));
+    CString::MakeUpper((CString *)&local_10);
+    iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+    if (iVar1 != -1) {
+      hModule = LoadLibraryA(*(LPCSTR *)(param_1 + 0x445c));
+      *(HMODULE *)(param_1 + 0x45c8) = hModule;
+      if (hModule != (HMODULE)0x0) {
+        pFVar2 = GetProcAddress(hModule,s_KernelConnect_00b8aa78);
+        *(FARPROC *)(param_1 + 0x45cc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_KernelDisconnect_00b8aa64);
+        *(FARPROC *)(param_1 + 0x45d0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_open_00b8aa58);
+        *(FARPROC *)(param_1 + 0x45d4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_close_00b8aa4c);
+        *(FARPROC *)(param_1 + 0x45d8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_read_00b8aa40);
+        *(FARPROC *)(param_1 + 0x45dc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_write_00b8aa34);
+        *(FARPROC *)(param_1 + 0x45e0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_flush_00b8aa28);
+        *(FARPROC *)(param_1 + 0x45e4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_rename_00b8aa1c);
+        *(FARPROC *)(param_1 + 0x45e8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_lseek_00b8aa10);
+        *(FARPROC *)(param_1 + 0x45ec) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_remove_00b8aa04);
+        *(FARPROC *)(param_1 + 0x45f0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_get_attributes_00b8a9f0);
+        *(FARPROC *)(param_1 + 0x45f4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_set_attributes_00b8a9dc);
+        *(FARPROC *)(param_1 + 0x45f8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_format_media_00b8a9c8);
+        *(FARPROC *)(param_1 + 0x45fc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_make_dir_00b8a9b8);
+        *(FARPROC *)(param_1 + 0x4600) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_remove_dir_00b8a9a8);
+        *(FARPROC *)(param_1 + 0x4604) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_get_drive_free_info_00b8a990);
+        *(FARPROC *)(param_1 + 0x4608) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_dir_search_first_00b8a978);
+        *(FARPROC *)(param_1 + 0x460c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_dir_search_next_00b8a964);
+        *(FARPROC *)(param_1 + 0x4610) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_dir_search_done_00b8a950);
+        *(FARPROC *)(param_1 + 0x4614) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x45c8),s_RPC_get_drive_status_00b8a938);
+        *(FARPROC *)(param_1 + 0x4618) = pFVar2;
+        if (((((((*(int *)(param_1 + 0x45cc) != 0) && (*(int *)(param_1 + 0x45d0) != 0)) &&
+               (*(int *)(param_1 + 0x45d4) != 0)) &&
+              ((*(int *)(param_1 + 0x45d8) != 0 && (*(int *)(param_1 + 0x45dc) != 0)))) &&
+             (((*(int *)(param_1 + 0x45e0) != 0 &&
+               ((*(int *)(param_1 + 0x45e4) != 0 && (*(int *)(param_1 + 0x45e8) != 0)))) &&
+              (*(int *)(param_1 + 0x45ec) != 0)))) &&
+            ((((*(int *)(param_1 + 0x45f0) != 0 && (*(int *)(param_1 + 0x45f4) != 0)) &&
+              (*(int *)(param_1 + 0x45f8) != 0)) &&
+             (((*(int *)(param_1 + 0x45fc) != 0 && (*(int *)(param_1 + 0x4600) != 0)) &&
+              ((*(int *)(param_1 + 0x4604) != 0 &&
+               ((*(int *)(param_1 + 0x4608) != 0 && (*(int *)(param_1 + 0x460c) != 0)))))))))) &&
+           ((*(int *)(param_1 + 0x4610) != 0 &&
+            ((*(int *)(param_1 + 0x4614) != 0 && (pFVar2 != (FARPROC)0x0)))))) {
+          local_4 = 0xffffffff;
+          CString::~CString((CString *)&local_10);
+          ExceptionList = local_c;
+          return 1;
+        }
+      }
+    }
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+  }
+  ExceptionList = local_c;
+  return 0;
+}
+
+
+
+===== FUN_005dd300 @ 005dd300 =====
+
+undefined4 __fastcall FUN_005dd300(int param_1)
+
+{
+  int iVar1;
+  HMODULE hModule;
+  FARPROC pFVar2;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_00893a18;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  iVar1 = FUN_005dfc20();
+  if (iVar1 != 0) {
+    CString::CString((CString *)&local_10);
+    local_4 = 0;
+    CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x60b8));
+    CString::MakeUpper((CString *)&local_10);
+    iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+    if (iVar1 != -1) {
+      hModule = LoadLibraryA(*(LPCSTR *)(param_1 + 0x60b8));
+      *(HMODULE *)(param_1 + 0x61d0) = hModule;
+      if (hModule != (HMODULE)0x0) {
+        pFVar2 = GetProcAddress(hModule,s_KernelConnect_00b8aa78);
+        *(FARPROC *)(param_1 + 0x61d4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_KernelDisconnect_00b8aa64);
+        *(FARPROC *)(param_1 + 0x61d8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_open_00b8aa58);
+        *(FARPROC *)(param_1 + 0x61dc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_close_00b8aa4c);
+        *(FARPROC *)(param_1 + 0x61e0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_read_00b8aa40);
+        *(FARPROC *)(param_1 + 0x61e4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_write_00b8aa34);
+        *(FARPROC *)(param_1 + 0x61e8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_flush_00b8aa28);
+        *(FARPROC *)(param_1 + 0x61ec) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_rename_00b8aa1c);
+        *(FARPROC *)(param_1 + 0x61f0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_lseek_00b8aa10);
+        *(FARPROC *)(param_1 + 0x61f4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_remove_00b8aa04);
+        *(FARPROC *)(param_1 + 0x61f8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_get_attributes_00b8a9f0);
+        *(FARPROC *)(param_1 + 0x61fc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_set_attributes_00b8a9dc);
+        *(FARPROC *)(param_1 + 0x6200) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_format_media_00b8a9c8);
+        *(FARPROC *)(param_1 + 0x6204) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_make_dir_00b8a9b8);
+        *(FARPROC *)(param_1 + 0x6208) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_remove_dir_00b8a9a8);
+        *(FARPROC *)(param_1 + 0x620c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_get_drive_free_info_00b8a990);
+        *(FARPROC *)(param_1 + 0x6210) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_dir_search_first_00b8a978);
+        *(FARPROC *)(param_1 + 0x6214) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_dir_search_next_00b8a964);
+        *(FARPROC *)(param_1 + 0x6218) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_dir_search_done_00b8a950);
+        *(FARPROC *)(param_1 + 0x621c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d0),s_RPC_get_drive_status_00b8a938);
+        *(FARPROC *)(param_1 + 0x6220) = pFVar2;
+        if (((((((*(int *)(param_1 + 0x61d4) != 0) && (*(int *)(param_1 + 0x61d8) != 0)) &&
+               (*(int *)(param_1 + 0x61dc) != 0)) &&
+              ((*(int *)(param_1 + 0x61e0) != 0 && (*(int *)(param_1 + 0x61e4) != 0)))) &&
+             (((*(int *)(param_1 + 0x61e8) != 0 &&
+               ((*(int *)(param_1 + 0x61ec) != 0 && (*(int *)(param_1 + 0x61f0) != 0)))) &&
+              (*(int *)(param_1 + 0x61f4) != 0)))) &&
+            ((((*(int *)(param_1 + 0x61f8) != 0 && (*(int *)(param_1 + 0x61fc) != 0)) &&
+              (*(int *)(param_1 + 0x6200) != 0)) &&
+             (((*(int *)(param_1 + 0x6204) != 0 && (*(int *)(param_1 + 0x6208) != 0)) &&
+              ((*(int *)(param_1 + 0x620c) != 0 &&
+               ((*(int *)(param_1 + 0x6210) != 0 && (*(int *)(param_1 + 0x6214) != 0)))))))))) &&
+           ((*(int *)(param_1 + 0x6218) != 0 &&
+            ((*(int *)(param_1 + 0x621c) != 0 && (pFVar2 != (FARPROC)0x0)))))) {
+          local_4 = 0xffffffff;
+          CString::~CString((CString *)&local_10);
+          ExceptionList = local_c;
+          return 1;
+        }
+      }
+    }
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+  }
+  ExceptionList = local_c;
+  return 0;
+}
+
+
+
+===== FUN_00551e20 @ 00551e20 =====
+
+undefined4 __fastcall FUN_00551e20(int param_1)
+
+{
+  HMODULE hModule;
+  FARPROC pFVar1;
+  int iVar2;
+  char *pcVar3;
+  CString local_114 [4];
+  char local_110 [260];
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008885db;
+  local_c = ExceptionList;
+  pcVar3 = local_110;
+  for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {
+    pcVar3[0] = '\0';
+    pcVar3[1] = '\0';
+    pcVar3[2] = '\0';
+    pcVar3[3] = '\0';
+    pcVar3 = pcVar3 + 4;
+  }
+  ExceptionList = &local_c;
+  iVar2 = FUN_005521d0(local_110);
+  if (iVar2 != 0) {
+    CString::CString(local_114);
+    local_4 = 0;
+    CString::operator=(local_114,local_110);
+    CString::MakeUpper(local_114);
+    iVar2 = CString::Find(local_114,s_NSMIF32_DLL_00b8aa88,0);
+    if (iVar2 != -1) {
+      FUN_00552150();
+      hModule = LoadLibraryA(local_110);
+      *(HMODULE *)(param_1 + 0x6c) = hModule;
+      if (hModule != (HMODULE)0x0) {
+        pFVar1 = GetProcAddress(hModule,s_KernelConnect_00b8aa78);
+        *(FARPROC *)(param_1 + 4) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_KernelDisconnect_00b8aa64);
+        *(FARPROC *)(param_1 + 8) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_open_00b8aa58);
+        *(FARPROC *)(param_1 + 0xc) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_close_00b8aa4c);
+        *(FARPROC *)(param_1 + 0x10) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_read_00b8aa40);
+        *(FARPROC *)(param_1 + 0x14) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_write_00b8aa34);
+        *(FARPROC *)(param_1 + 0x18) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_flush_00b8aa28);
+        *(FARPROC *)(param_1 + 0x1c) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_rename_00b8aa1c);
+        *(FARPROC *)(param_1 + 0x20) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_lseek_00b8aa10);
+        *(FARPROC *)(param_1 + 0x24) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_remove_00b8aa04);
+        *(FARPROC *)(param_1 + 0x28) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_get_attributes_00b8a9f0);
+        *(FARPROC *)(param_1 + 0x2c) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_set_attributes_00b8a9dc);
+        *(FARPROC *)(param_1 + 0x30) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_format_media_00b8a9c8);
+        *(FARPROC *)(param_1 + 0x34) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_make_dir_00b8a9b8);
+        *(FARPROC *)(param_1 + 0x38) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_remove_dir_00b8a9a8);
+        *(FARPROC *)(param_1 + 0x3c) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_get_drive_free_info_00b8a990);
+        *(FARPROC *)(param_1 + 0x40) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_dir_search_first_00b8a978);
+        *(FARPROC *)(param_1 + 0x44) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_dir_search_next_00b8a964);
+        *(FARPROC *)(param_1 + 0x48) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_dir_search_done_00b8a950);
+        *(FARPROC *)(param_1 + 0x4c) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_get_drive_status_00b8a938);
+        *(FARPROC *)(param_1 + 0x50) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_measure_set_range_00b8a920);
+        *(FARPROC *)(param_1 + 0x54) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_measure_start_00b8a90c);
+        *(FARPROC *)(param_1 + 0x58) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_measure_stop_00b8a8f8);
+        *(FARPROC *)(param_1 + 0x5c) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_measure_get_inf_00b8a8e4);
+        *(FARPROC *)(param_1 + 0x60) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_measure_volt_convert_00b8a8c8);
+        *(FARPROC *)(param_1 + 100) = pFVar1;
+        pFVar1 = GetProcAddress(*(HMODULE *)(param_1 + 0x6c),s_RPC_measure_pulse_convert_00b8a8ac);
+        *(FARPROC *)(param_1 + 0x68) = pFVar1;
+        if (((((((((*(int *)(param_1 + 4) != 0) && (*(int *)(param_1 + 8) != 0)) &&
+                 (*(int *)(param_1 + 0xc) != 0)) &&
+                ((*(int *)(param_1 + 0x10) != 0 && (*(int *)(param_1 + 0x14) != 0)))) &&
+               (*(int *)(param_1 + 0x18) != 0)) &&
+              (((*(int *)(param_1 + 0x1c) != 0 && (*(int *)(param_1 + 0x20) != 0)) &&
+               ((*(int *)(param_1 + 0x24) != 0 &&
+                (((*(int *)(param_1 + 0x28) != 0 && (*(int *)(param_1 + 0x2c) != 0)) &&
+                 (*(int *)(param_1 + 0x30) != 0)))))))) &&
+             ((*(int *)(param_1 + 0x34) != 0 && (*(int *)(param_1 + 0x38) != 0)))) &&
+            (((*(int *)(param_1 + 0x3c) != 0 &&
+              (((*(int *)(param_1 + 0x40) != 0 && (*(int *)(param_1 + 0x44) != 0)) &&
+               ((*(int *)(param_1 + 0x48) != 0 &&
+                (((*(int *)(param_1 + 0x4c) != 0 && (*(int *)(param_1 + 0x50) != 0)) &&
+                 (*(int *)(param_1 + 0x54) != 0)))))))) &&
+             (((*(int *)(param_1 + 0x58) != 0 && (*(int *)(param_1 + 0x5c) != 0)) &&
+              (*(int *)(param_1 + 0x60) != 0)))))) &&
+           ((*(int *)(param_1 + 100) != 0 && (pFVar1 != (FARPROC)0x0)))) {
+          local_4 = 0xffffffff;
+          CString::~CString(local_114);
+          ExceptionList = local_c;
+          return 1;
+        }
+      }
+    }
+    local_4 = 0xffffffff;
+    CString::~CString(local_114);
+  }
+  ExceptionList = local_c;
+  return 0;
+}
+
+
+
+===== FUN_00651f00 @ 00651f00 =====
+
+undefined4 __fastcall FUN_00651f00(int param_1)
+
+{
+  int iVar1;
+  HMODULE hModule;
+  FARPROC pFVar2;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0089e0d8;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  iVar1 = FUN_006545b0();
+  if (iVar1 != 0) {
+    CString::CString((CString *)&local_10);
+    local_4 = 0;
+    CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x60bc));
+    CString::MakeUpper((CString *)&local_10);
+    iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+    if (iVar1 != -1) {
+      hModule = LoadLibraryA(*(LPCSTR *)(param_1 + 0x60bc));
+      *(HMODULE *)(param_1 + 0x61d8) = hModule;
+      if (hModule != (HMODULE)0x0) {
+        pFVar2 = GetProcAddress(hModule,s_KernelConnect_00b8aa78);
+        *(FARPROC *)(param_1 + 0x61dc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_KernelDisconnect_00b8aa64);
+        *(FARPROC *)(param_1 + 0x61e0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_open_00b8aa58);
+        *(FARPROC *)(param_1 + 0x61e4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_close_00b8aa4c);
+        *(FARPROC *)(param_1 + 0x61e8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_read_00b8aa40);
+        *(FARPROC *)(param_1 + 0x61ec) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_write_00b8aa34);
+        *(FARPROC *)(param_1 + 0x61f0) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_flush_00b8aa28);
+        *(FARPROC *)(param_1 + 0x61f4) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_rename_00b8aa1c);
+        *(FARPROC *)(param_1 + 0x61f8) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_lseek_00b8aa10);
+        *(FARPROC *)(param_1 + 0x61fc) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_remove_00b8aa04);
+        *(FARPROC *)(param_1 + 0x6200) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_get_attributes_00b8a9f0);
+        *(FARPROC *)(param_1 + 0x6204) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_set_attributes_00b8a9dc);
+        *(FARPROC *)(param_1 + 0x6208) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_format_media_00b8a9c8);
+        *(FARPROC *)(param_1 + 0x620c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_make_dir_00b8a9b8);
+        *(FARPROC *)(param_1 + 0x6210) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_remove_dir_00b8a9a8);
+        *(FARPROC *)(param_1 + 0x6214) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_get_drive_free_info_00b8a990);
+        *(FARPROC *)(param_1 + 0x6218) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_dir_search_first_00b8a978);
+        *(FARPROC *)(param_1 + 0x621c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_dir_search_next_00b8a964);
+        *(FARPROC *)(param_1 + 0x6220) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_dir_search_done_00b8a950);
+        *(FARPROC *)(param_1 + 0x6224) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x61d8),s_RPC_get_drive_status_00b8a938);
+        *(FARPROC *)(param_1 + 0x6228) = pFVar2;
+        if (((((((*(int *)(param_1 + 0x61dc) != 0) && (*(int *)(param_1 + 0x61e0) != 0)) &&
+               (*(int *)(param_1 + 0x61e4) != 0)) &&
+              ((*(int *)(param_1 + 0x61e8) != 0 && (*(int *)(param_1 + 0x61ec) != 0)))) &&
+             (((*(int *)(param_1 + 0x61f0) != 0 &&
+               ((*(int *)(param_1 + 0x61f4) != 0 && (*(int *)(param_1 + 0x61f8) != 0)))) &&
+              (*(int *)(param_1 + 0x61fc) != 0)))) &&
+            ((((*(int *)(param_1 + 0x6200) != 0 && (*(int *)(param_1 + 0x6204) != 0)) &&
+              (*(int *)(param_1 + 0x6208) != 0)) &&
+             (((*(int *)(param_1 + 0x620c) != 0 && (*(int *)(param_1 + 0x6210) != 0)) &&
+              ((*(int *)(param_1 + 0x6214) != 0 &&
+               ((*(int *)(param_1 + 0x6218) != 0 && (*(int *)(param_1 + 0x621c) != 0)))))))))) &&
+           ((*(int *)(param_1 + 0x6220) != 0 &&
+            ((*(int *)(param_1 + 0x6224) != 0 && (pFVar2 != (FARPROC)0x0)))))) {
+          local_4 = 0xffffffff;
+          CString::~CString((CString *)&local_10);
+          ExceptionList = local_c;
+          return 1;
+        }
+      }
+    }
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+  }
+  ExceptionList = local_c;
+  return 0;
+}
+
+
+
+===== FUN_005e4310 @ 005e4310 =====
+
+undefined4 __fastcall FUN_005e4310(int param_1)
+
+{
+  int iVar1;
+  HMODULE hModule;
+  FARPROC pFVar2;
+  int local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_00894388;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  iVar1 = FUN_005e90e0();
+  if (iVar1 != 0) {
+    CString::CString((CString *)&local_10);
+    local_4 = 0;
+    CString::operator=((CString *)&local_10,(CString *)(param_1 + 0x2e44));
+    CString::MakeUpper((CString *)&local_10);
+    iVar1 = CString::Find((CString *)&local_10,s_NSMIF32_DLL_00b8aa88,0);
+    if (iVar1 != -1) {
+      hModule = LoadLibraryA(*(LPCSTR *)(param_1 + 0x2e44));
+      *(HMODULE *)(param_1 + 0x2e48) = hModule;
+      if (hModule != (HMODULE)0x0) {
+        pFVar2 = GetProcAddress(hModule,s_KernelConnect_00b8aa78);
+        *(FARPROC *)(param_1 + 0x2e4c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_KernelDisconnect_00b8aa64);
+        *(FARPROC *)(param_1 + 0x2e50) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_open_00b8aa58);
+        *(FARPROC *)(param_1 + 0x2e54) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_close_00b8aa4c);
+        *(FARPROC *)(param_1 + 0x2e58) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_read_00b8aa40);
+        *(FARPROC *)(param_1 + 0x2e5c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_write_00b8aa34);
+        *(FARPROC *)(param_1 + 0x2e60) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_flush_00b8aa28);
+        *(FARPROC *)(param_1 + 0x2e64) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_rename_00b8aa1c);
+        *(FARPROC *)(param_1 + 0x2e68) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_lseek_00b8aa10);
+        *(FARPROC *)(param_1 + 0x2e6c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_remove_00b8aa04);
+        *(FARPROC *)(param_1 + 0x2e70) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_get_attributes_00b8a9f0);
+        *(FARPROC *)(param_1 + 0x2e74) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_set_attributes_00b8a9dc);
+        *(FARPROC *)(param_1 + 0x2e78) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_format_media_00b8a9c8);
+        *(FARPROC *)(param_1 + 0x2e7c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_make_dir_00b8a9b8);
+        *(FARPROC *)(param_1 + 0x2e80) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_remove_dir_00b8a9a8);
+        *(FARPROC *)(param_1 + 0x2e84) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_get_drive_free_info_00b8a990);
+        *(FARPROC *)(param_1 + 0x2e88) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_dir_search_first_00b8a978);
+        *(FARPROC *)(param_1 + 0x2e8c) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_dir_search_next_00b8a964);
+        *(FARPROC *)(param_1 + 0x2e90) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_dir_search_done_00b8a950);
+        *(FARPROC *)(param_1 + 0x2e94) = pFVar2;
+        pFVar2 = GetProcAddress(*(HMODULE *)(param_1 + 0x2e48),s_RPC_get_drive_status_00b8a938);
+        *(FARPROC *)(param_1 + 0x2e98) = pFVar2;
+        if (((((((*(int *)(param_1 + 0x2e4c) != 0) && (*(int *)(param_1 + 0x2e50) != 0)) &&
+               (*(int *)(param_1 + 0x2e54) != 0)) &&
+              ((*(int *)(param_1 + 0x2e58) != 0 && (*(int *)(param_1 + 0x2e5c) != 0)))) &&
+             (((*(int *)(param_1 + 0x2e60) != 0 &&
+               ((*(int *)(param_1 + 0x2e64) != 0 && (*(int *)(param_1 + 0x2e68) != 0)))) &&
+              (*(int *)(param_1 + 0x2e6c) != 0)))) &&
+            ((((*(int *)(param_1 + 0x2e70) != 0 && (*(int *)(param_1 + 0x2e74) != 0)) &&
+              (*(int *)(param_1 + 0x2e78) != 0)) &&
+             (((*(int *)(param_1 + 0x2e7c) != 0 && (*(int *)(param_1 + 0x2e80) != 0)) &&
+              ((*(int *)(param_1 + 0x2e84) != 0 &&
+               ((*(int *)(param_1 + 0x2e88) != 0 && (*(int *)(param_1 + 0x2e8c) != 0)))))))))) &&
+           ((*(int *)(param_1 + 0x2e90) != 0 &&
+            ((*(int *)(param_1 + 0x2e94) != 0 && (pFVar2 != (FARPROC)0x0)))))) {
+          local_4 = 0xffffffff;
+          CString::~CString((CString *)&local_10);
+          ExceptionList = local_c;
+          return 1;
+        }
+      }
+    }
+    local_4 = 0xffffffff;
+    CString::~CString((CString *)&local_10);
+  }
+  ExceptionList = local_c;
+  return 0;
+}
+
+
+
+===== FUN_00556570 @ 00556570 =====
+
+void __thiscall
+FUN_00556570(int param_1,undefined4 *param_2,CString param_3,uint param_4,CString param_5,
+            CString param_6,HWND param_7)
+
+{
+  undefined4 *wParam;
+  LPARAM lParam;
+  int iVar1;
+  CString *this;
+  CString *this_00;
+  CString *this_01;
+  uint uVar2;
+  undefined1 local_res0;
+  CString aCStack_e [2];
+  undefined1 *local_c;
+  undefined1 *local_8;
+  undefined1 *local_4;
+  
+  wParam = param_2;
+  local_4 = (undefined1 *)0xffffffff;
+  local_8 = &LAB_00888760;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  lParam = FUN_00551c20(*(undefined4 *)(param_1 + 0x104),*param_2,param_2[1],param_2[2],param_2[3],
+                        param_1 + 0x120);
+  CString::CString((CString *)&param_2);
+  local_4 = (undefined1 *)0x0;
+  CString::CString(aCStack_e + -6);
+  local_4 = (undefined1 *)CONCAT31(local_4._1_3_,1);
+  CString::Format((CString *)&param_2,(char *)&param_2);
+  local_c = aCStack_e + -0x16;
+  CString::CString(aCStack_e + -0x16,&param_3);
+  FUN_007f49c0();
+  CString::Format(this,(char *)&param_3);
+  iVar1 = wParam[1];
+  uVar2 = 0;
+  if (*(int *)(iVar1 + 0x10) != 0) {
+    do {
+      CString::Format((CString *)(uint)*(byte *)(iVar1 + 0x18 + uVar2),(char *)&local_c);
+      CString::operator+=(&param_5,(CString *)&local_8);
+      iVar1 = wParam[1];
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < *(uint *)(iVar1 + 0x10));
+  }
+  CString::operator+=((CString *)&param_4,&DAT_00b8acbc);
+  local_8 = aCStack_e + -0x12;
+  CString::CString(aCStack_e + -0x12,(CString *)&param_4);
+  FUN_007f49c0();
+  CString::Format(this_00,(char *)&param_4);
+  iVar1 = wParam[2];
+  uVar2 = 0;
+  if (*(int *)(iVar1 + 0x10) != 0) {
+    do {
+      CString::Format((CString *)(uint)*(byte *)(iVar1 + 0x18 + uVar2),(char *)&local_8);
+      CString::operator+=(&param_6,(CString *)&local_4);
+      iVar1 = wParam[2];
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < *(uint *)(iVar1 + 0x10));
+  }
+  CString::operator+=(&param_5,&DAT_00b8acbc);
+  local_4 = aCStack_e + -0xe;
+  CString::CString(aCStack_e + -0xe,&param_5);
+  FUN_007f49c0();
+  CString::Format(this_01,(char *)&param_5);
+  iVar1 = wParam[3];
+  uVar2 = 0;
+  if (*(int *)(iVar1 + 0x10) != 0) {
+    do {
+      CString::Format((CString *)(uint)*(byte *)(iVar1 + 0x18 + uVar2),(char *)&local_4);
+      CString::operator+=((CString *)&param_7,(CString *)&local_res0);
+      iVar1 = wParam[3];
+      uVar2 = uVar2 + 1;
+    } while (uVar2 < *(uint *)(iVar1 + 0x10));
+  }
+  CString::operator+=(&param_6,&DAT_00b8acbc);
+  CString::CString(aCStack_e + -10,&param_6);
+  FUN_007f49c0();
+  param_4 = param_4 & 0xffffff00;
+  CString::~CString((CString *)&local_4);
+  param_4 = 0xffffffff;
+  CString::~CString(&param_6);
+  SendMessageCallbackA(param_7,0x1054,(WPARAM)wParam,lParam,FUN_00553570,0);
+  ExceptionList = param_2;
+  return;
+}
+
+
+
+===== FUN_005a6170 @ 005a6170 =====
+
+void __thiscall FUN_005a6170(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  CString *this;
+  int *piVar4;
+  CString aCStack_24 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0088ebf8;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_24 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar2 == 0) {
+    if (param_3 == 0) {
+      piVar1 = param_1 + 0x2607;
+      piVar3 = piVar1;
+      for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar3 = 0;
+        piVar3 = piVar3 + 1;
+      }
+      iVar2 = 0;
+      piVar3 = (int *)(param_1[0x19d0] + 8 + param_1[0x19d6] * 0x198);
+      if (*(int *)(param_1[0x19d0] + 8 + param_1[0x19d6] * 0x198) != 0) {
+        piVar4 = piVar1;
+        do {
+          iVar2 = iVar2 + 1;
+          *piVar4 = *piVar3;
+          piVar4[1] = piVar3[1];
+          piVar4 = piVar4 + 2;
+          piVar3 = (int *)(param_1[0x19d0] + 8 + (iVar2 + param_1[0x19d6] * 0x33) * 8);
+        } while (*piVar3 != 0);
+        if (0 < iVar2) {
+          param_1[0x2648] = (int)piVar1;
+          param_1[0x2647] = iVar2;
+          FUN_007d3a00();
+          ExceptionList = puStack_8;
+          return;
+        }
+      }
+      (**(code **)(*param_1 + 0x114))(0);
+      ExceptionList = local_10;
+      return;
+    }
+    FUN_005a6080();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_005a6970 @ 005a6970 =====
+
+void __thiscall FUN_005a6970(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int iVar1;
+  CString *this;
+  CString aCStack_20 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0088ec38;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_20 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar1 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar1 == 0) {
+    if (param_3 == 0) {
+      param_1[0x19cb] = 1;
+      FUN_005a6880();
+      FUN_005a6a50();
+      param_1[0x19c5] = 0x1b;
+      ExceptionList = puStack_8;
+      return;
+    }
+    FUN_005a6080();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_005a8b40 @ 005a8b40 =====
+
+void __thiscall FUN_005a8b40(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  CString *this;
+  int *piVar4;
+  CString aCStack_24 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0088ee58;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_24 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar2 == 0) {
+    if (param_3 == 0) {
+      piVar1 = param_1 + 0x2a3e;
+      piVar3 = piVar1;
+      for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar3 = 0;
+        piVar3 = piVar3 + 1;
+      }
+      iVar2 = 0;
+      piVar3 = (int *)(param_1[0x1e07] + 8 + param_1[0x1e0d] * 0x198);
+      if (*(int *)(param_1[0x1e07] + 8 + param_1[0x1e0d] * 0x198) != 0) {
+        piVar4 = piVar1;
+        do {
+          iVar2 = iVar2 + 1;
+          *piVar4 = *piVar3;
+          piVar4[1] = piVar3[1];
+          piVar4 = piVar4 + 2;
+          piVar3 = (int *)(param_1[0x1e07] + 8 + (iVar2 + param_1[0x1e0d] * 0x33) * 8);
+        } while (*piVar3 != 0);
+        if (0 < iVar2) {
+          param_1[0x2a7f] = (int)piVar1;
+          param_1[0x2a7e] = iVar2;
+          FUN_007d3a00();
+          ExceptionList = puStack_8;
+          return;
+        }
+      }
+      (**(code **)(*param_1 + 0x114))(0);
+      ExceptionList = local_10;
+      return;
+    }
+    FUN_005a8a50();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_005a9340 @ 005a9340 =====
+
+void __thiscall FUN_005a9340(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int iVar1;
+  CString *this;
+  CString aCStack_20 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_0088ee98;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_20 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar1 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar1 == 0) {
+    if (param_3 == 0) {
+      param_1[0x1e03] = 1;
+      FUN_005a9250();
+      FUN_005a9420();
+      param_1[0x1df6] = 8;
+      ExceptionList = puStack_8;
+      return;
+    }
+    FUN_005a8a50();
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_006b1470 @ 006b1470 =====
+
+void __thiscall FUN_006b1470(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  CString *this;
+  int *piVar4;
+  CString aCStack_24 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008a4a68;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_24 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar2 == 0) {
+    iVar2 = FUN_006b3b30();
+    if (iVar2 != 1) {
+      if (param_3 == 0) {
+        piVar1 = param_1 + 0x1223;
+        piVar3 = piVar1;
+        for (iVar2 = 0x40; iVar2 != 0; iVar2 = iVar2 + -1) {
+          *piVar3 = 0;
+          piVar3 = piVar3 + 1;
+        }
+        iVar2 = 0;
+        piVar3 = (int *)(param_1[0x22eba] + 8 + param_1[0x1179] * 0x198);
+        if (*(int *)(param_1[0x22eba] + 8 + param_1[0x1179] * 0x198) != 0) {
+          piVar4 = piVar1;
+          do {
+            iVar2 = iVar2 + 1;
+            *piVar4 = *piVar3;
+            piVar4[1] = piVar3[1];
+            piVar4 = piVar4 + 2;
+            piVar3 = (int *)(param_1[0x22eba] + 8 + (iVar2 + param_1[0x1179] * 0x33) * 8);
+          } while (*piVar3 != 0);
+          if (0 < iVar2) {
+            param_1[0x1215] = (int)piVar1;
+            param_1[0x1214] = iVar2;
+            FUN_007d3a00();
+            ExceptionList = puStack_8;
+            return;
+          }
+        }
+        (**(code **)(*param_1 + 0x114))(0);
+        ExceptionList = local_10;
+        return;
+      }
+      FUN_006b1010();
+    }
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_006b18a0 @ 006b18a0 =====
+
+void __thiscall FUN_006b18a0(int *param_1,undefined4 param_2,int param_3,uint param_4)
+
+{
+  char *pcVar1;
+  char cVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  CString *this;
+  int iVar6;
+  CString aCStackY_b4 [128];
+  CString local_18 [4];
+  CString local_14 [4];
+  CString aCStack_10 [4];
+  undefined1 *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008a4ac8;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  CString::CString(local_18);
+  iVar6 = param_3;
+  local_4 = 0;
+  CString::Format(this,(char *)local_18);
+  local_c = aCStackY_b4 + 0x8c;
+  CString::CString(aCStackY_b4 + 0x8c,local_14);
+  FUN_007f49c0();
+  CString::~CString(local_14);
+  iVar3 = (**(code **)(*param_1 + 0xcc))();
+  if ((iVar3 == 0) && (iVar4 = FUN_006b3b30(), iVar3 = param_3, iVar4 != 1)) {
+    if ((iVar6 == 0) && (FUN_007d3720(*(undefined4 *)(param_3 + 4),&param_3), 2 < param_4)) {
+      iVar6 = *(int *)(iVar3 + 4) + param_3;
+      pcVar1 = (char *)(iVar6 + 0x19);
+      cVar2 = *pcVar1;
+      if (((cVar2 != *(char *)(iVar6 + 0x1a)) || (cVar2 == '\b')) || (cVar2 == -0x6c)) {
+        *(undefined2 *)((int)param_1 + 0x885fe) = *(undefined2 *)pcVar1;
+      }
+      param_1[0x22ec4] = 1;
+      FUN_006b3750(*(undefined4 *)(iVar3 + 4));
+      if (*(int *)(param_1[0x11] + 0x129c) == 4) {
+        param_1[0x121c] = 1;
+        param_1[0x121b] = 1;
+        puVar5 = (undefined4 *)FUN_0048af20();
+        iVar6 = _mbsicmp((uchar *)*puVar5,(uchar *)&PTR_LAB_00b82428);
+        CString::~CString(aCStack_10);
+        iVar3 = 400;
+        if (iVar6 != 0) {
+          iVar3 = 1000;
+        }
+        param_1[0x1221] = iVar3;
+        param_1[0x121d] = iVar3;
+        param_1[0x1220] = (int)(param_1 + 0x1e8d);
+        param_1[0x121e] = 1;
+        param_1[0x121f] = param_1[0x1184];
+        FUN_007d3830();
+      }
+      else {
+        puVar5 = (undefined4 *)(param_1[0x22eba] + param_1[0x1179] * 0x198);
+        FUN_006b4080(*puVar5,CONCAT31((int3)(CONCAT22((short)((uint)(param_1[0x1179] * 0x33) >> 0x10
+                                                             ),*(undefined2 *)
+                                                                ((int)param_1 + 0x885fe)) >> 8),
+                                      *(undefined1 *)(puVar5 + 1)),
+                     CONCAT31((int3)((uint)param_1[0x22eba] >> 8),*(undefined1 *)((int)puVar5 + 5)))
+        ;
+        FUN_007d3a20();
+      }
+    }
+    else {
+      FUN_006b1010();
+    }
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_006b1a90 @ 006b1a90 =====
+
+void __thiscall FUN_006b1a90(int *param_1,undefined4 param_2,int param_3)
+
+{
+  undefined1 uVar1;
+  short sVar2;
+  int iVar3;
+  CString *this;
+  undefined4 uStack0000000c;
+  undefined4 local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  sVar2 = sRam00000001;
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008a4ae8;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString((CString *)((int)register0x00000010 + -0x18),(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar3 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar3 == 0) {
+    iVar3 = FUN_006b3b30();
+    if (iVar3 != 1) {
+      if (param_3 == 0) {
+        param_1[0x22ec4] = 0;
+        *(short *)((int)param_1 + 0x885fe) = sVar2;
+        uStack0000000c._1_3_ = (undefined3)((uint)((int)register0x00000010 + -0x18) >> 8);
+        if ((sVar2 == -0x6b6c) || (sVar2 == 0x808)) {
+          uVar1 = 0xf1;
+          uStack0000000c = CONCAT31(uStack0000000c._1_3_,0x6a);
+        }
+        else {
+          iVar3 = param_1[0x22eba] + param_1[0x1179] * 0x198;
+          uVar1 = *(undefined1 *)(iVar3 + 4);
+          uStack0000000c = CONCAT31(uStack0000000c._1_3_,*(undefined1 *)(iVar3 + 5));
+        }
+        FUN_006b4080(*(undefined4 *)(param_1[0x22eba] + param_1[0x1179] * 0x198),uVar1,
+                     uStack0000000c);
+        FUN_007d3a20();
+        ExceptionList = puStack_8;
+        return;
+      }
+      FUN_006b1010();
+    }
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_006b1bf0 @ 006b1bf0 =====
+
+void __thiscall FUN_006b1bf0(int *param_1,undefined4 param_2,int param_3)
+
+{
+  int iVar1;
+  CString *this;
+  CString aCStack_20 [4];
+  int *local_10;
+  void *local_c;
+  undefined1 *puStack_8;
+  undefined4 local_4;
+  
+  local_4 = 0xffffffff;
+  puStack_8 = &LAB_008a4b08;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  local_10 = param_1;
+  CString::CString((CString *)&local_10);
+  local_4 = 0;
+  CString::Format(this,(char *)&local_10);
+  CString::CString(aCStack_20 + 8,(CString *)&local_c);
+  FUN_007f49c0();
+  CString::~CString((CString *)&local_c);
+  iVar1 = (**(code **)(*param_1 + 0xcc))();
+  if (iVar1 == 0) {
+    iVar1 = FUN_006b3b30();
+    if (iVar1 != 1) {
+      if (param_3 == 0) {
+        param_1[0x22ec4] = 1;
+        FUN_006b0f10();
+        ExceptionList = puStack_8;
+        return;
+      }
+      FUN_006b1010();
+    }
+  }
+  ExceptionList = puStack_8;
+  return;
+}
+
+
+
+===== FUN_006b4180 @ 006b4180 =====
+
+void __thiscall
+FUN_006b4180(int *param_1,undefined4 param_2,int param_3,CString *param_4,CString param_5)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  CString *this;
+  CString local_14 [2];
+  CString aCStack_12 [2];
+  CString local_10 [4];
+  undefined1 *local_c;
+  undefined1 *puStack_8;
+  void *local_4;
+  
+  local_4 = (void *)0xffffffff;
+  puStack_8 = &LAB_008a4d00;
+  local_c = ExceptionList;
+  ExceptionList = &local_c;
+  CString::CString(local_14);
+  iVar1 = param_3;
+  local_4 = (void *)0x0;
+  CString::Format(this,(char *)local_14);
+  local_c = local_14 + -8;
+  CString::CString(local_14 + -8,local_10);
+  FUN_007f49c0();
+  CString::~CString(local_10);
+  iVar2 = (**(code **)(*param_1 + 0xcc))();
+  if ((iVar2 != 0) || (iVar3 = FUN_006b3b30(), iVar2 = param_3, iVar3 == 1)) {
+    ExceptionList = puStack_8;
+    return;
+  }
+  if (iVar1 == 0) {
+    FUN_007d3720(*(undefined4 *)(param_3 + 0x14),&param_3);
+    FUN_006b3750(*(undefined4 *)(iVar2 + 0x14));
+  }
+  else if ((iVar1 != 9) && (iVar1 != 0x10)) {
+    FUN_006b1010();
+    ExceptionList = puStack_8;
+    return;
+  }
+  if ((*(short *)((int)param_1 + 0x885fe) == -0x6b6c) ||
+     (*(short *)((int)param_1 + 0x885fe) == 0x808)) {
+    param_3 = CONCAT31(param_3._1_3_,0xf1);
+    param_4 = (CString *)CONCAT31(param_4._1_3_,0x6a);
+  }
+  else {
+    iVar1 = param_1[0x22eba] + param_1[0x1179] * 0x198;
+    param_3 = CONCAT31(param_3._1_3_,*(undefined1 *)(iVar1 + 4));
+    param_4 = (CString *)CONCAT31(param_4._1_3_,*(undefined1 *)(iVar1 + 5));
+  }
+  FUN_006b4080(*(undefined4 *)(param_1[0x22eba] + param_1[0x1179] * 0x198),param_3,param_4);
+  FUN_007d3a20();
+  CString::CString((CString *)&param_4);
+  CString::Format((CString *)&param_4,(char *)&param_4);
+  param_4 = local_14 + -4;
+  CString::CString(local_14 + -4,&param_5);
+  FUN_007f49c0();
+  CString::~CString(&param_5);
+  ExceptionList = local_4;
+  return;
+}
+
+
+
+Decompiled: 25

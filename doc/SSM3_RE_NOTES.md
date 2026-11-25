@@ -100,6 +100,36 @@ The *wire command sequence* for the reset is still unknown: the DB records give
 the menu/item structure, not the request bytes. Recovering those bytes is the
 next step.
 
+## Tooling set up (done)
+
+- Ghidra 12.2 at `C:\Dev\ghidra`; Temurin JDK 25 at
+  `C:\Program Files\Eclipse Adoptium\jdk-25.0.5.10002-hotspot`.
+  Set `JAVA_HOME` before launching Ghidra (PowerShell syntax):
+  `$env:JAVA_HOME='C:\Program Files\Eclipse Adoptium\jdk-25.0.5.10002-hotspot'`.
+- `PcDiag.exe` imported and fully auto-analysed into
+  `C:\Users\ianph\AppData\Local\Temp\opencode\ghidra_proj` (168 s).
+  `NSMIF32.dll` imported into the same project as `NSMIF`.
+- GhidraMCP 7.0.0 installed: extension in
+  `%APPDATA%\Ghidra\ghidra_12.2_PUBLIC\Extensions\GhidraMCP`, bridge wheel
+  installed as `bridge-mcp-ghidra.exe` in the Windows Store Python Scripts dir.
+- Working LM Studio/Bionic MCP connection: **Web address**
+  `http://127.0.0.1:8082/sse` (SSE transport). A streamable-HTTP bridge also
+  runs on `http://127.0.0.1:8081/mcp`; stdio works when the client keeps stdin
+  open (`mcp.json` example in the chat history).
+- Static decompilation output is saved in `doc/ssm3_tools/decomp_*.txt`
+  (strings-based PcDiag pass, NSMIF32 pass, J2534-string-reference pass).
+
+### Important static-analysis finding
+
+`PcDiag.exe` has **no static J2534 imports** — it resolves `PassThruOpen`,
+`PassThruConnect`, `PassThruWriteMsgs`, `PassThruReadMsgs`, `KernelConnect`,
+etc. through `GetProcAddress`. `NSMIF32.dll` does call `PassThruIoctl`, but its
+vendor-specific ioctl `0x80001000` uses command bytes `0x73`/`0x22` (`RPC_read`)
+and `0x14`/`0x02`/`0x27` (`RPC_lseek`) for **CF-card** access, not vehicle
+diagnostics. Therefore the diagnostic request bytes are not recoverable from
+those ioctl calls. Either follow the dynamic `GetProcAddress` call sites in
+Ghidra (now possible through MCP) or capture a live SSM3 session.
+
 ## Next step — Ghidra decompilation
 
 `PcDiag.exe` has been imported into a Ghidra project at
