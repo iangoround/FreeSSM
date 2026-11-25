@@ -113,9 +113,16 @@ next step.
   `%APPDATA%\Ghidra\ghidra_12.2_PUBLIC\Extensions\GhidraMCP`, bridge wheel
   installed as `bridge-mcp-ghidra.exe` in the Windows Store Python Scripts dir.
 - Working LM Studio/Bionic MCP connection: **Web address**
-  `http://127.0.0.1:8082/sse` (SSE transport). A streamable-HTTP bridge also
-  runs on `http://127.0.0.1:8081/mcp`; stdio works when the client keeps stdin
-  open (`mcp.json` example in the chat history).
+  `http://127.0.0.1:8082/sse` (SSE transport, lazy tool loading). A full-tool
+  bridge with all 204 tools advertised runs at **`http://127.0.0.1:8083/sse`**
+  (started with `--no-lazy`) — use this one for deep decompilation/xref work.
+  A streamable-HTTP bridge also runs on `http://127.0.0.1:8081/mcp`; stdio works
+  when the client keeps stdin open.
+- OpenCode is configured to delegate to the same local Qwen model
+  (`bionic/qwen3-coder`, agent `qwen`) while keeping `opencode/hy4-flash-free`
+  as the default model. CLI bridge: `C:\Users\ianph\.config\opencode\qwen.py`.
+- `doc/ssm3_tools/iso15765_decode.py` decodes J2534 `PASSTHRU_MSG` bytes
+  (CAN ID + ISO-TP PCI) and names UDS/SSM services, DIDs and negative responses.
 - Static decompilation output is saved in `doc/ssm3_tools/decomp_*.txt`
   (strings-based PcDiag pass, NSMIF32 pass, J2534-string-reference pass).
 
