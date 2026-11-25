@@ -77,8 +77,15 @@ J2534/CAN capture of the reset, or dynamic instrumentation of `PcDiag.exe`
 
 ## Next actions
 
-1. Set up dynamic hooking of `PassThruWriteMsgs` (proxy J2534 DLL or Frida)
-   and run the SSM3 steering-reset operation with the vehicle/cable present.
+1. **Capture tool ready**: `doc/ssm3_tools/frida_j2534_capture.py` hooks
+   `PassThruWriteMsgs` / `PassThruReadMsgs` in a running `PcDiag.exe` process and
+   writes each `PASSTHRU_MSG` (CAN ID, protocol, flags, raw bytes) to JSONL:
+   ```
+   python C:\Dev\FreeSSM\doc\ssm3_tools\frida_j2534_capture.py PcDiag.exe
+   ```
+   Run it after launching SSM3, then perform the steering reset; Ctrl+C stops.
+   Requires the user to install/run the SSM3 software with the Tactrix cable.
+2. Decode captured frames with `iso15765_decode.py`.
 2. Capture the request/response bytes and decode with `iso15765_decode.py`.
 3. Compare captured frames against `TestModeInfo` records to map fields.
 4. Enumerate other test functions by exercising their menu items and logging.
