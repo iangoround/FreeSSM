@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <!--
-	J2534libs.xml - Define J2534-libraries for Linux
+	J2534libs.xml - Define J2534-libraries (used on Linux and Windows)
 
 	(c) 2016 MartinX
 	(c) 2018 Comer352L
@@ -51,6 +51,18 @@
 		<PROTOCOLS>
 			<PROTOCOL>ISO9141</PROTOCOL>
 			<PROTOCOL>ISO14230</PROTOCOL>
+		</PROTOCOLS>
+	</J2534LIB>
+
+	Tactrix OpenPort 2.0 (32-bit Windows): FreeSSM auto-detects op20pt32.dll
+	in the standard OpenECU/EcuFlash directories, so an entry is normally not
+	needed. Use this as a template if your DLL is installed elsewhere:
+	<J2534LIB name="Tactrix OpenPort 2.0" api="04.04" path="C:\Program Files (x86)\OpenECU\EcuFlash\drivers\openport 2.0\op20pt32.dll" >
+		<PROTOCOLS>
+			<PROTOCOL>ISO15765</PROTOCOL>
+			<PROTOCOL>ISO9141</PROTOCOL>
+			<PROTOCOL>ISO14230</PROTOCOL>
+			<PROTOCOL>CAN</PROTOCOL>
 		</PROTOCOLS>
 	</J2534LIB>
 -->

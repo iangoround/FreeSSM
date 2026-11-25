@@ -140,6 +140,11 @@ This is a (incomplete) list of interfaces that should work with FreeSSM (no guar
 Interfaces with ELM-chip (ELM320, ELM322, ELM323, ELM327) will not work, because they use a
 fixed AT-command-set which is not compatible with the SUBARU®-specific protocol.</p>
 
+<p style='margin-bottom:0cm;margin-bottom:.0001pt'>The Tactrix® Openport 2.0 does not provide a usable serial pass-through port.
+It can be used with the experimental <strong>SAE-J2534 Pass-Through</strong> interface type instead
+(32-bit FreeSSM build required). On CAN-based Subaru ECUs this provides SSM2 over ISO-15765,
+using the same setup as ECU-Link/RomRaider. Other applications must not hold the device.</p>
+
 <p style='margin-bottom:0cm;margin-bottom:.0001pt'><a name=2></a><strong>2.)
 Which vehicle models are supported ?</strong> </p>
 
@@ -303,10 +308,12 @@ OBD2-Scantool is needed.<br>
 <p style='margin-bottom:0cm;margin-bottom:.0001pt'><a name=14></a><strong>14.)
 Does FreeSSM use/support the CAN-Bus ?</strong> </p>
 
-<p style='margin-bottom:0cm;margin-bottom:.0001pt'>No, because it's not necessary. 
-Of course, the newer vehicles are working with a CAN-Bus system, but it is not 
-used for diagnostic purposes at manufacturer level or rather the communication 
-between engine/transmission control unit and the diagnostic equipment.</p>
+<p style='margin-bottom:0cm;margin-bottom:.0001pt'>FreeSSM is not an OBD2 scan tool. Newer vehicles use a CAN bus for
+communication between control units, but manufacturer-level diagnostics are
+not performed with generic OBD2 services.<br>
+The experimental <strong>SAE-J2534 Pass-Through</strong> interface type does support
+Subaru SSM2 over ISO-15765 (CAN) on compatible ECUs, e.g. with the Tactrix
+Openport 2.0 (32-bit build required). See FAQ 1.</p>
 
 <p style='margin-bottom:0cm;margin-bottom:.0001pt'><a name=15></a><strong>15.)
 Will development of FreeSSM go on ?</strong> </p>

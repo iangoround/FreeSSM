@@ -168,6 +168,7 @@ bool J2534DiagInterface::connect(AbstractDiagInterface::protocol_type protocol)
 
 	if (_j2534 == NULL)
 		return false;
+	_numFilters = 0;
 	// CHECK PROTOCOL AND SET UP PARAMETERS
 	if (protocol == AbstractDiagInterface::protocol_type::SSM2_ISO14230)
 	{
@@ -217,7 +218,12 @@ bool J2534DiagInterface::connect(AbstractDiagInterface::protocol_type protocol)
 #ifdef __FSSM_DEBUG__
 		printErrorDescription("PassThruIoctl() for parameter LOOPBACK failed: ", ret);
 #endif
-		goto err_close;
+		// ISO-15765 does not need echo (default is LOOPBACK=OFF). Some drivers,
+		// e.g. the Tactrix OpenPort 2.0, reject this parameter on CAN channels;
+		// in that case it is safe to continue. For ISO-14230 the echo is needed
+		// by the protocol layer, so the configuration is mandatory there.
+		if (protocol == AbstractDiagInterface::protocol_type::SSM2_ISO14230)
+			goto err_close;
 	}
 	// Baudrate (MANDATORY for 02.02-API only):
 	CfgItems[0].Parameter = DATA_RATE;
@@ -232,6 +238,26 @@ bool J2534DiagInterface::connect(AbstractDiagInterface::protocol_type protocol)
 #endif
 		if (_j2534->libraryAPIversion() == J2534_API_version::v0202)
 			goto err_close;
+	}
+	if (protocol == AbstractDiagInterface::protocol_type::SSM2_ISO15765)
+	{
+		/* ----- SET CONFIGURATION (ISO-15765 specific) ----- */
+		// ISO-TP flow control: unlimited block size, zero separation time.
+		// This matches the Tactrix OpenPort 2.0 J2534 driver / RomRaider setup
+		// that ECU-Link uses successfully for Subaru SSM-over-CAN.
+		SCONFIG CfgItemsTP[2];
+		CfgItemsTP[0].Parameter = ISO15765_BS;
+		CfgItemsTP[0].Value = 0;
+		CfgItemsTP[1].Parameter = ISO15765_STMIN;
+		CfgItemsTP[1].Value = 0;
+		SCONFIG_LIST InputTP;
+		InputTP.NumOfParams = 2;
+		InputTP.ConfigPtr = CfgItemsTP;
+		ret = _j2534->PassThruIoctl(_ChannelID, SET_CONFIG, (void *)&InputTP, (void *)NULL);
+#ifdef __FSSM_DEBUG__
+		if (STATUS_NOERROR != ret)
+			printErrorDescription("PassThruIoctl() for ISO15765_BS/ISO15765_STMIN failed (continuing): ", ret);
+#endif
 	}
 	if (protocol == AbstractDiagInterface::protocol_type::SSM2_ISO14230)
 	{
@@ -545,13 +571,14 @@ bool J2534DiagInterface::read(std::vector<char> *buffer)
 				{
 #ifdef __FSSM_DEBUG__
 					if (rx_msgs[i].RxStatus & TX_DONE)	// SAE J2534-1 (dec 2004): ISO-15765 only
-					{
 						std::cout << "  => message is transmit confirmation message\n";
-						continue;
-					}
 					else
 						std::cout << "  => message is loopback message\n";
 #endif
+					// Never feed transmitted/echoed frames into the receive stream.
+					// A TX_DONE confirmation can carry the request bytes, which
+					// would otherwise be mistaken for an ECU reply in release builds.
+					continue;
 				}
 				else
 				{

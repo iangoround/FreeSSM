@@ -7,7 +7,7 @@ TEMPLATE = app
 TARGET = FreeSSM
 DESTDIR = ./
 DEPENDPATH += . src ui
-INCLUDEPATH += . src src/tinyxml
+INCLUDEPATH += . src src/tinyxml2
 
 
 # Input
@@ -195,7 +195,7 @@ unix:filestarget.files += resources/icons/freessm/48x48/FreeSSM.png
 doctarget.path = $$INSTALLDIR/doc
 doctarget.files = doc/*
 defstarget.path = $$INSTALLDIR/definitions
-defstarget.files = definitions/SSM1defs_*.xml
+defstarget.files = definitions/SSM1defs_*.xml definitions/J2534libs.xml
 translation.commands = $$[QT_INSTALL_BINS]/lrelease FreeSSM.pro
 translation.path = $$INSTALLDIR
 translation.files = $$TRANSLATIONS_BIN  #NOTE: wildcards don't work (if the *.qm files don't exist yet when qmake is run, it creates a non-working installation command using the wildcard name as destination name)
@@ -247,9 +247,6 @@ win32 {
     CONFIG(release, debug|release): platformstarget.files = $$[QT_INSTALL_PLUGINS]/platforms/qwindows.dll
     CONFIG(debug, debug|release): platformstarget.files   = $$[QT_INSTALL_PLUGINS]/platforms/qwindowsd.dll
   }
-}
-unix {
-    defstarget.files += definitions/J2534libs.xml
 }
 INSTALLS += target doctarget defstarget filestarget translation
 win32:INSTALLS += dllstarget platformstarget

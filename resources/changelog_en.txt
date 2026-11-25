@@ -1,5 +1,7 @@
 next release (current development snapshot):
-  - Added experimental support for J2534 interfaces
+  - Added experimental support for J2534 interfaces, including automatic
+    detection of the Tactrix Openport 2.0 J2534 library (op20pt32.dll) and
+    the ISO-TP settings required for Subaru SSM-over-CAN
   - Added experimental support for AT command controlled interfaces
   - Added experimental support for SSM2 over ISO-15765 (CAN)
   - Added support for the old SSM1 communication protocol

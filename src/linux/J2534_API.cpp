@@ -151,7 +151,7 @@ void J2534_API::assignJ2534fcns()
 	_PassThruStartMsgFilter = reinterpret_cast< J2534_PassThruStartMsgFilter >( dlsym( _J2534LIB, "PassThruStartMsgFilter" ) );
 	_PassThruStopMsgFilter = reinterpret_cast< J2534_PassThruStopMsgFilter >( dlsym( _J2534LIB, "PassThruStopMsgFilter" ) );
 	_PassThruWriteMsgs = reinterpret_cast< J2534_PassThruWriteMsgs >( dlsym( _J2534LIB, "PassThruWriteMsgs" ) );
-	_PassThruStartPeriodicMsg = reinterpret_cast< J2534_PassThruStartPeriodicMsg >( dlsym( _J2534LIB, "PassThruStartPeriodicMsgs" ) );
+	_PassThruStartPeriodicMsg = reinterpret_cast< J2534_PassThruStartPeriodicMsg >( dlsym( _J2534LIB, "PassThruStartPeriodicMsg" ) );
 	_PassThruStopPeriodicMsg = reinterpret_cast< J2534_PassThruStopPeriodicMsg >( dlsym( _J2534LIB, "PassThruStopPeriodicMsg" ) );
 	_PassThruIoctl = reinterpret_cast< J2534_PassThruIoctl >( dlsym( _J2534LIB, "PassThruIoctl" ) );
 }

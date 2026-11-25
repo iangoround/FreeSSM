@@ -98,6 +98,26 @@ and other Unix systems, too, but there is currently no offical support.
        the 64 bit version is required for building a 64 bit application.
        Both versions can be installed in parallel.
 
+
+3.1 TACTRIX OPENPORT 2.0 VIA J2534 (MS WINDOWS, EXPERIMENTAL):
+
+    Select "SAE-J2534 Pass-Through" as interface type in the preferences.
+    FreeSSM looks for J2534 libraries in the Windows registry (PassThruSupport),
+    in definitions/J2534libs.xml and - for the OpenPort 2.0 - in the standard
+    OpenECU/EcuFlash driver directories (op20pt32.dll). If your DLL is installed
+    somewhere else, add a J2534LIB entry for it in definitions/J2534libs.xml.
+
+    Requirements:
+    - 32-bit FreeSSM build (op20pt32.dll is 32-bit only)
+    - Tactrix/OpenECU drivers installed, cable connected, ignition on
+    - no other application (ECUFlash, RomRaider, ...) holding the device
+
+    Subaru ECUs using CAN (SSM2 over ISO-15765, 500 kbit/s) are supported with
+    the same setup that ECU-Link/RomRaider use: ISO-TP block size 0, separation
+    time 0, and flow-control filters for 0x7E0/0x7E8. Support for K-line ECUs
+    over the J2534 path is experimental.
+
+
 --------------------------------------------------------------------------------
 
 4. COMPILATION:
@@ -115,6 +135,8 @@ library is available as 32 and/or 64 bit version.
 can only be used by a 64 bit application.
 At least on MS Windows, most libraries are still available as 32bit version only.
 So you likely prefer to build a 32 bit application here.
+This is mandatory for the Tactrix OpenPort 2.0: its J2534 library op20pt32.dll
+is 32-bit only, so a 64-bit FreeSSM cannot load it.
 
 To build a 32 (64) bit application on MS Windows, you have to use
 the 32 (64) bit version of MinGW.

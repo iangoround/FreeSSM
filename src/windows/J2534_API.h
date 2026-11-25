@@ -89,6 +89,9 @@ private:
 
 	void assignJ2534fcns();
 	static std::vector<J2534Library> searchLibValuesRecursive(HKEY hKey, std::vector<J2534Library> PTlibs);
+	static std::vector<J2534Library> parseJ2534LibsXml(const std::string& path);
+	static std::vector<J2534Library> findTactrixLibraries();
+	static void addLibraryUnique(std::vector<J2534Library>& libs, const J2534Library& lib);
 
 };
 
