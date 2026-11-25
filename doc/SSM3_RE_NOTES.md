@@ -121,6 +121,13 @@ next step.
 - OpenCode is configured to delegate to the same local Qwen model
   (`bionic/qwen3-coder`, agent `qwen`) while keeping `opencode/hy4-flash-free`
   as the default model. CLI bridge: `C:\Users\ianph\.config\opencode\qwen.py`.
+- Local server throughput tuning: original Bionic settings (32k context,
+  `--n-cpu-moe 59`, `--ubatch-size 512`) benchmarked **29 tok/s**; optimized
+  settings (16k context, `--n-cpu-moe 30`, `--ubatch-size 1024`) benchmarked
+  **41 tok/s** (~41% faster). Restart with
+  `python C:\Users\ianph\.config\opencode\start_qwen.py` (same port 58778 and
+  API key; requires the CUDA vendor DLL directory on PATH). OpenCode model
+  context limit was reduced to 16384 to match.
 - `doc/ssm3_tools/iso15765_decode.py` decodes J2534 `PASSTHRU_MSG` bytes
   (CAN ID + ISO-TP PCI) and names UDS/SSM services, DIDs and negative responses.
 - Static decompilation output is saved in `doc/ssm3_tools/decomp_*.txt`
