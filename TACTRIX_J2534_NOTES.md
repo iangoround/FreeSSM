@@ -41,7 +41,7 @@ and loading `op20pt32.dll` directly from the OpenECU driver directory in a
 
 - Installed a 32-bit Qt 5.15.2 / MinGW 8.1.0 toolchain (via `aqtinstall`) and
   **compiled the patched FreeSSM successfully** as a 32-bit release build at
-  `C:\Dev\FreeSSM-build\FreeSSM.exe` (Qt runtime deployed with `windeployqt`).
+  `C:\Dev\FreeSSM\build\FreeSSM.exe` (Qt runtime deployed with `windeployqt`).
 - A standalone 32-bit probe compiled from the patched `J2534_API.cpp` reports
   two discovered libraries, both named "Tactrix OpenPort 2.0 (J2534)":
   - `C:\Program Files (x86)\OpenECU\EcuFlash\drivers\openport 2.0\op20pt32.dll`
@@ -78,7 +78,7 @@ Then:
 1. Plug in the OpenPort 2.0, switch ignition on, and close ECUFlash/RomRaider.
 2. Start `FreeSSM.exe` from its build/install directory (so
    `definitions/J2534libs.xml` is found — that directory is already populated
-   in `C:\Dev\FreeSSM-build`).
+   in `C:\Dev\FreeSSM\build`).
 3. Preferences → interface type "SAE-J2534 Pass-Through" → select
    "Tactrix OpenPort 2.0 (J2534)" → Test.
 4. If the DLL is installed somewhere unusual, add a `J2534LIB` entry to
