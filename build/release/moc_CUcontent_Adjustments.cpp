@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../FreeSSM/src/CUcontent_Adjustments.h"
+#include "../../src/CUcontent_Adjustments.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

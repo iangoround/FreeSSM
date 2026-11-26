@@ -25310,9 +25310,9 @@ uninstall_filestarget: FORCE
 install_translation: first FORCE
 	@if not exist C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM mkdir C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM & if not exist C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM exit 1
 	C:/Qt/5.15.2/mingw81_32/bin/lrelease FreeSSM.pro
-	$(QINSTALL) C:\Dev\FreeSSM\FreeSSM_en.qm C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_en.qm
-	$(QINSTALL) C:\Dev\FreeSSM\FreeSSM_de.qm C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_de.qm
-	$(QINSTALL) C:\Dev\FreeSSM\FreeSSM_tr.qm C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_tr.qm
+	$(QINSTALL) C:\Dev\FreeSSM\build\FreeSSM_en.qm C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_en.qm
+	$(QINSTALL) C:\Dev\FreeSSM\build\FreeSSM_de.qm C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_de.qm
+	$(QINSTALL) C:\Dev\FreeSSM\build\FreeSSM_tr.qm C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_tr.qm
 
 uninstall_translation: FORCE
 	-$(DEL_FILE) C:$(INSTALL_ROOT:@msyshack@%=%)\FreeSSM\FreeSSM_tr.qm
